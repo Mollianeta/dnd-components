@@ -1,0 +1,32 @@
+{
+  "name": "dnd",
+  "version": "1.0.0",
+  "description": "DnD app for building encounters and running them.",
+  "homepage": "https://github.com/GirthWorm-Brew/dnd-colin#readme",
+  "bugs": {
+    "url": "https://github.com/GirthWorm-Brew/dnd-colin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GirthWorm-Brew/dnd-colin.git"
+  },
+  "license": "ISC",
+  "author": "yycholla",
+  "type": "commonjs",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "tsx": "^4.21.0"
+  }
+}
