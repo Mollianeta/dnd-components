@@ -33,6 +33,10 @@
     color: white;
 }
 
+body {
+    background-color: #F1E9D2;
+}
+
 header {
     background-color: #211103;
     align-items: center;
@@ -41,11 +45,12 @@ header {
 footer {
     background-color: #211103;
     align-items: center;
-    color: white
+    color: white;
 }
 
 .header-icon img {
-    size: 80%;
+    height: 80%;
+    width: 80%;
     border-radius: 25%;
     padding: 15px;
 }
