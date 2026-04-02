@@ -10,8 +10,7 @@ const isMelee = weapon.range === 0 || weapon.properties.some(
   properties => properties.property.name === "Thrown");
 
 // working on a constant with arrow functions that holds the mastery property so that it can be displayed later
-// const masteryProperty = weapon.properties.some(
-//   properties => properties.property.type === "Mastery")
+const masteryProperty = weapon.properties.find((properties) => properties.property.type === "Mastery");
 
 
 export default function Weapon() {
