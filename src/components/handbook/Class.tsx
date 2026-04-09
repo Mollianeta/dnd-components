@@ -56,7 +56,7 @@ export default function Class() {
   }, []);
 
   return (
-    <div className="phb page soft">
+    <Container className="phb page soft">
       <h1>Class</h1>
       <div className="columnWrapper" id="p2" data-index="1">
         <h2>{char.name}</h2>
@@ -76,6 +76,6 @@ export default function Class() {
         <p className="">{char.document__title}</p>
       </div>
       <div className="pageNumber auto"></div>
-    </div>
+    </Container>
   );
 }

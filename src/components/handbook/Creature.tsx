@@ -6,6 +6,7 @@ import {
   SpeedAll,
 } from "../../modules/open5e/types.gen";
 import { Container } from "react-bootstrap";
+import { useParams } from "react-router";
 
 function SpeedBlock({ speed }: { speed: SpeedAll }) {
   const unit = speed.unit;
@@ -34,14 +35,15 @@ function SpeedBlock({ speed }: { speed: SpeedAll }) {
   );
 }
 
-export default function CreaturePage({ id }: { id: string }) {
+export default function CreaturePage() {
+  let { stub } = useParams();
   const [creature, setCreature] = useState<Creature | null>(null);
 
   useEffect(() => {
     async function load() {
       const res = await creaturesRetrieve({
         path: {
-          key: id,
+          key: stub || "",
         },
       });
       console.log(res.response);

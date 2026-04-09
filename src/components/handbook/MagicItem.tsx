@@ -14,8 +14,8 @@ import { useState, useEffect } from "react";
 //   "document__url": string
 // }
 
-export default function MagicItem({ id }: { id: string }) {
-  const [magicItem, setMagicItem] = useState<MagicitemsRetrieveResponse | null>(
+export default function magicItem({ id }: { id: string }) {
+  const [magicItem, setmagicItem] = useState<MagicitemsRetrieveResponse | null>(
     null,
   );
 
@@ -27,7 +27,7 @@ export default function MagicItem({ id }: { id: string }) {
         },
       });
       console.log(res.response);
-      setMagicItem(res.data as MagicitemsRetrieveResponse);
+      setmagicItem(res.data as MagicitemsRetrieveResponse);
     }
     load();
   }, []);
@@ -41,7 +41,24 @@ export default function MagicItem({ id }: { id: string }) {
   } else {
     return (
       <Container fluid className="phb page">
-        <main className=""></main>
+        <main className="">
+          <h1>Magic Item</h1>
+          <div className="columnWrapper">
+            <h2 id="magicItem">{magicItem.name}</h2>
+            <p className="wide">
+              <em>
+                {magicItem.rarity.name} {magicItem.category.name}
+              </em>
+            </p>
+          </div>
+          <a className="artist" href={magicItem.document.permalink}>
+            {magicItem.document.publisher.name}
+          </a>
+          <div className="footnote">
+            <p className="">{magicItem.document.name}</p>
+          </div>
+          <div className="pageNumber auto"></div>
+        </main>
       </Container>
     );
   }
