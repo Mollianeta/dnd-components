@@ -46,7 +46,7 @@ export default function CreaturePage() {
           key: stub || "",
         },
       });
-      console.log(res.response);
+      console.log(res.data);
       setCreature(res.data as Creature);
     }
     load();

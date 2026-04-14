@@ -2,22 +2,24 @@ import { Container } from "react-bootstrap";
 import { armorRetrieve } from "../../modules/open5e/sdk.gen";
 import { Armor } from "../../modules/open5e/types.gen";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-export default function ArmorPage({ id }: { id: string }) {
+export default function ArmorPage() {
+  let { stub } = useParams();
   const [armor, setArmor] = useState<Armor | null>(null);
 
   useEffect(() => {
     async function load() {
       const res = await armorRetrieve({
         path: {
-          key: id,
+          key: stub || "",
         },
       });
       console.log(res.response);
       setArmor(res.data as Armor);
     }
     load();
-  }, []);
+  }, [stub]);
 
   if (!armor) {
     return (
@@ -42,10 +44,13 @@ export default function ArmorPage({ id }: { id: string }) {
               </p>
             ) : null}
             <ul className="wide">
-              {armor.grants_stealth_disadvantage ? <li>Disadvantage on stealth checks</li> : null}
+              {armor.grants_stealth_disadvantage ? (
+                <li>Disadvantage on stealth checks</li>
+              ) : null}
               {typeof armor.strength_score_required == "number" ? (
                 <li>
-                  <strong>Requires: </strong> {armor.strength_score_required} Strength
+                  <strong>Requires: </strong> {armor.strength_score_required}{" "}
+                  Strength
                 </li>
               ) : null}
             </ul>

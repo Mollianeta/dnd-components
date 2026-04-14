@@ -605,7 +605,15 @@ export type CreatureActionAttack = {
    * * `D12` - d12
    * * `D20` - d20
    */
-  extra_damage_die_type?: "D4" | "D6" | "D8" | "D10" | "D12" | "D20" | "" | null;
+  extra_damage_die_type?:
+    | "D4"
+    | "D6"
+    | "D8"
+    | "D10"
+    | "D12"
+    | "D20"
+    | ""
+    | null;
   /**
    * Damage roll modifier.
    */
@@ -2923,7 +2931,15 @@ export type CreatureActionAttackWritable = {
    * * `D12` - d12
    * * `D20` - d20
    */
-  extra_damage_die_type?: "D4" | "D6" | "D8" | "D10" | "D12" | "D20" | "" | null;
+  extra_damage_die_type?:
+    | "D4"
+    | "D6"
+    | "D8"
+    | "D10"
+    | "D12"
+    | "D20"
+    | ""
+    | null;
   /**
    * Damage roll modifier.
    */
@@ -4519,7 +4535,8 @@ export type ItemsRetrieveResponses = {
   200: Item;
 };
 
-export type ItemsRetrieveResponse = ItemsRetrieveResponses[keyof ItemsRetrieveResponses];
+export type ItemsRetrieveResponse =
+  ItemsRetrieveResponses[keyof ItemsRetrieveResponses];
 
 export type MagicitemsListData = {
   body?: never;
@@ -4642,7 +4659,8 @@ export type MagicitemsListResponses = {
   200: PaginatedItemList;
 };
 
-export type MagicitemsListResponse = MagicitemsListResponses[keyof MagicitemsListResponses];
+export type MagicitemsListResponse =
+  MagicitemsListResponses[keyof MagicitemsListResponses];
 
 export type MagicitemsRetrieveData = {
   body?: never;
@@ -4711,7 +4729,8 @@ export type ItemsetsListResponses = {
   200: PaginatedItemSetList;
 };
 
-export type ItemsetsListResponse = ItemsetsListResponses[keyof ItemsetsListResponses];
+export type ItemsetsListResponse =
+  ItemsetsListResponses[keyof ItemsetsListResponses];
 
 export type ItemsetsRetrieveData = {
   body?: never;
@@ -4729,7 +4748,8 @@ export type ItemsetsRetrieveResponses = {
   200: ItemSet;
 };
 
-export type ItemsetsRetrieveResponse = ItemsetsRetrieveResponses[keyof ItemsetsRetrieveResponses];
+export type ItemsetsRetrieveResponse =
+  ItemsetsRetrieveResponses[keyof ItemsetsRetrieveResponses];
 
 export type ItemcategoriesListData = {
   body?: never;
@@ -4849,7 +4869,8 @@ export type DocumentsListResponses = {
   200: PaginatedDocumentList;
 };
 
-export type DocumentsListResponse = DocumentsListResponses[keyof DocumentsListResponses];
+export type DocumentsListResponse =
+  DocumentsListResponses[keyof DocumentsListResponses];
 
 export type DocumentsRetrieveData = {
   body?: never;
@@ -4901,7 +4922,8 @@ export type LicensesListResponses = {
   200: PaginatedLicenseList;
 };
 
-export type LicensesListResponse = LicensesListResponses[keyof LicensesListResponses];
+export type LicensesListResponse =
+  LicensesListResponses[keyof LicensesListResponses];
 
 export type LicensesRetrieveData = {
   body?: never;
@@ -4919,7 +4941,8 @@ export type LicensesRetrieveResponses = {
   200: License;
 };
 
-export type LicensesRetrieveResponse = LicensesRetrieveResponses[keyof LicensesRetrieveResponses];
+export type LicensesRetrieveResponse =
+  LicensesRetrieveResponses[keyof LicensesRetrieveResponses];
 
 export type PublishersListData = {
   body?: never;
@@ -4951,7 +4974,8 @@ export type PublishersListResponses = {
   200: PaginatedPublisherList;
 };
 
-export type PublishersListResponse = PublishersListResponses[keyof PublishersListResponses];
+export type PublishersListResponse =
+  PublishersListResponses[keyof PublishersListResponses];
 
 export type PublishersRetrieveData = {
   body?: never;
@@ -5041,7 +5065,8 @@ export type WeaponsListResponses = {
   200: PaginatedWeaponList;
 };
 
-export type WeaponsListResponse = WeaponsListResponses[keyof WeaponsListResponses];
+export type WeaponsListResponse =
+  WeaponsListResponses[keyof WeaponsListResponses];
 
 export type WeaponsRetrieveData = {
   body?: never;
@@ -5059,7 +5084,8 @@ export type WeaponsRetrieveResponses = {
   200: Weapon;
 };
 
-export type WeaponsRetrieveResponse = WeaponsRetrieveResponses[keyof WeaponsRetrieveResponses];
+export type WeaponsRetrieveResponse =
+  WeaponsRetrieveResponses[keyof WeaponsRetrieveResponses];
 
 export type ArmorListData = {
   body?: never;
@@ -5140,7 +5166,8 @@ export type ArmorRetrieveResponses = {
   200: Armor;
 };
 
-export type ArmorRetrieveResponse = ArmorRetrieveResponses[keyof ArmorRetrieveResponses];
+export type ArmorRetrieveResponse =
+  ArmorRetrieveResponses[keyof ArmorRetrieveResponses];
 
 export type GamesystemsListData = {
   body?: never;
@@ -5170,7 +5197,8 @@ export type GamesystemsListResponses = {
   200: PaginatedGameSystemList;
 };
 
-export type GamesystemsListResponse = GamesystemsListResponses[keyof GamesystemsListResponses];
+export type GamesystemsListResponse =
+  GamesystemsListResponses[keyof GamesystemsListResponses];
 
 export type GamesystemsRetrieveData = {
   body?: never;
@@ -5240,7 +5268,8 @@ export type BackgroundsListResponses = {
   200: PaginatedBackgroundList;
 };
 
-export type BackgroundsListResponse = BackgroundsListResponses[keyof BackgroundsListResponses];
+export type BackgroundsListResponse =
+  BackgroundsListResponses[keyof BackgroundsListResponses];
 
 export type BackgroundsRetrieveData = {
   body?: never;
@@ -5328,7 +5357,8 @@ export type FeatsRetrieveResponses = {
   200: Feat;
 };
 
-export type FeatsRetrieveResponse = FeatsRetrieveResponses[keyof FeatsRetrieveResponses];
+export type FeatsRetrieveResponse =
+  FeatsRetrieveResponses[keyof FeatsRetrieveResponses];
 
 export type SpeciesListData = {
   body?: never;
@@ -5386,7 +5416,8 @@ export type SpeciesListResponses = {
   200: PaginatedSpeciesList;
 };
 
-export type SpeciesListResponse = SpeciesListResponses[keyof SpeciesListResponses];
+export type SpeciesListResponse =
+  SpeciesListResponses[keyof SpeciesListResponses];
 
 export type SpeciesRetrieveData = {
   body?: never;
@@ -5404,7 +5435,8 @@ export type SpeciesRetrieveResponses = {
   200: Species;
 };
 
-export type SpeciesRetrieveResponse = SpeciesRetrieveResponses[keyof SpeciesRetrieveResponses];
+export type SpeciesRetrieveResponse =
+  SpeciesRetrieveResponses[keyof SpeciesRetrieveResponses];
 
 export type CreaturesListData = {
   body?: never;
@@ -5536,7 +5568,8 @@ export type CreaturesListResponses = {
   200: PaginatedCreatureList;
 };
 
-export type CreaturesListResponse = CreaturesListResponses[keyof CreaturesListResponses];
+export type CreaturesListResponse =
+  CreaturesListResponses[keyof CreaturesListResponses];
 
 export type CreaturesRetrieveData = {
   body?: never;
@@ -5677,7 +5710,8 @@ export type CreaturesetsListResponses = {
   200: PaginatedCreatureSetList;
 };
 
-export type CreaturesetsListResponse = CreaturesetsListResponses[keyof CreaturesetsListResponses];
+export type CreaturesetsListResponse =
+  CreaturesetsListResponses[keyof CreaturesetsListResponses];
 
 export type CreaturesetsRetrieveData = {
   body?: never;
@@ -5747,7 +5781,8 @@ export type DamagetypesListResponses = {
   200: PaginatedDamageTypeList;
 };
 
-export type DamagetypesListResponse = DamagetypesListResponses[keyof DamagetypesListResponses];
+export type DamagetypesListResponse =
+  DamagetypesListResponses[keyof DamagetypesListResponses];
 
 export type DamagetypesRetrieveData = {
   body?: never;
@@ -5818,7 +5853,8 @@ export type LanguagesListResponses = {
   200: PaginatedLanguageList;
 };
 
-export type LanguagesListResponse = LanguagesListResponses[keyof LanguagesListResponses];
+export type LanguagesListResponse =
+  LanguagesListResponses[keyof LanguagesListResponses];
 
 export type LanguagesRetrieveData = {
   body?: never;
@@ -5888,7 +5924,8 @@ export type AlignmentsListResponses = {
   200: PaginatedAlignmentList;
 };
 
-export type AlignmentsListResponse = AlignmentsListResponses[keyof AlignmentsListResponses];
+export type AlignmentsListResponse =
+  AlignmentsListResponses[keyof AlignmentsListResponses];
 
 export type AlignmentsRetrieveData = {
   body?: never;
@@ -5958,7 +5995,8 @@ export type ConditionsListResponses = {
   200: PaginatedConditionList;
 };
 
-export type ConditionsListResponse = ConditionsListResponses[keyof ConditionsListResponses];
+export type ConditionsListResponse =
+  ConditionsListResponses[keyof ConditionsListResponses];
 
 export type ConditionsRetrieveData = {
   body?: never;
@@ -6242,7 +6280,8 @@ export type SpellsRetrieveResponses = {
   200: Spell;
 };
 
-export type SpellsRetrieveResponse = SpellsRetrieveResponses[keyof SpellsRetrieveResponses];
+export type SpellsRetrieveResponse =
+  SpellsRetrieveResponses[keyof SpellsRetrieveResponses];
 
 export type SpellschoolsListData = {
   body?: never;
@@ -6293,7 +6332,8 @@ export type SpellschoolsListResponses = {
   200: PaginatedSpellSchoolList;
 };
 
-export type SpellschoolsListResponse = SpellschoolsListResponses[keyof SpellschoolsListResponses];
+export type SpellschoolsListResponse =
+  SpellschoolsListResponses[keyof SpellschoolsListResponses];
 
 export type SpellschoolsRetrieveData = {
   body?: never;
@@ -6368,7 +6408,8 @@ export type ClassesListResponses = {
   200: PaginatedCharacterClassList;
 };
 
-export type ClassesListResponse = ClassesListResponses[keyof ClassesListResponses];
+export type ClassesListResponse =
+  ClassesListResponses[keyof ClassesListResponses];
 
 export type ClassesRetrieveData = {
   body?: never;
@@ -6386,7 +6427,8 @@ export type ClassesRetrieveResponses = {
   200: CharacterClass;
 };
 
-export type ClassesRetrieveResponse = ClassesRetrieveResponses[keyof ClassesRetrieveResponses];
+export type ClassesRetrieveResponse =
+  ClassesRetrieveResponses[keyof ClassesRetrieveResponses];
 
 export type SizesListData = {
   body?: never;
@@ -6455,7 +6497,8 @@ export type SizesRetrieveResponses = {
   200: Size;
 };
 
-export type SizesRetrieveResponse = SizesRetrieveResponses[keyof SizesRetrieveResponses];
+export type SizesRetrieveResponse =
+  SizesRetrieveResponses[keyof SizesRetrieveResponses];
 
 export type ItemraritiesListData = {
   body?: never;
@@ -6485,7 +6528,8 @@ export type ItemraritiesListResponses = {
   200: PaginatedItemRarityList;
 };
 
-export type ItemraritiesListResponse = ItemraritiesListResponses[keyof ItemraritiesListResponses];
+export type ItemraritiesListResponse =
+  ItemraritiesListResponses[keyof ItemraritiesListResponses];
 
 export type ItemraritiesRetrieveData = {
   body?: never;
@@ -6555,7 +6599,8 @@ export type EnvironmentsListResponses = {
   200: PaginatedEnvironmentList;
 };
 
-export type EnvironmentsListResponse = EnvironmentsListResponses[keyof EnvironmentsListResponses];
+export type EnvironmentsListResponse =
+  EnvironmentsListResponses[keyof EnvironmentsListResponses];
 
 export type EnvironmentsRetrieveData = {
   body?: never;
@@ -6625,7 +6670,8 @@ export type AbilitiesListResponses = {
   200: PaginatedAbilityList;
 };
 
-export type AbilitiesListResponse = AbilitiesListResponses[keyof AbilitiesListResponses];
+export type AbilitiesListResponse =
+  AbilitiesListResponses[keyof AbilitiesListResponses];
 
 export type AbilitiesRetrieveData = {
   body?: never;
@@ -6692,7 +6738,8 @@ export type SkillsRetrieveResponses = {
   200: Skill;
 };
 
-export type SkillsRetrieveResponse = SkillsRetrieveResponses[keyof SkillsRetrieveResponses];
+export type SkillsRetrieveResponse =
+  SkillsRetrieveResponses[keyof SkillsRetrieveResponses];
 
 export type RulesListData = {
   body?: never;
@@ -6761,7 +6808,8 @@ export type RulesRetrieveResponses = {
   200: Rule;
 };
 
-export type RulesRetrieveResponse = RulesRetrieveResponses[keyof RulesRetrieveResponses];
+export type RulesRetrieveResponse =
+  RulesRetrieveResponses[keyof RulesRetrieveResponses];
 
 export type RulesetsListData = {
   body?: never;
@@ -6808,7 +6856,8 @@ export type RulesetsListResponses = {
   200: PaginatedRuleSetList;
 };
 
-export type RulesetsListResponse = RulesetsListResponses[keyof RulesetsListResponses];
+export type RulesetsListResponse =
+  RulesetsListResponses[keyof RulesetsListResponses];
 
 export type RulesetsRetrieveData = {
   body?: never;
@@ -6826,7 +6875,8 @@ export type RulesetsRetrieveResponses = {
   200: RuleSet;
 };
 
-export type RulesetsRetrieveResponse = RulesetsRetrieveResponses[keyof RulesetsRetrieveResponses];
+export type RulesetsRetrieveResponse =
+  RulesetsRetrieveResponses[keyof RulesetsRetrieveResponses];
 
 export type ImagesListData = {
   body?: never;
@@ -6874,7 +6924,8 @@ export type ImagesRetrieveResponses = {
   200: Image;
 };
 
-export type ImagesRetrieveResponse = ImagesRetrieveResponses[keyof ImagesRetrieveResponses];
+export type ImagesRetrieveResponse =
+  ImagesRetrieveResponses[keyof ImagesRetrieveResponses];
 
 export type WeaponpropertiesListData = {
   body?: never;
@@ -6977,7 +7028,8 @@ export type ServicesListResponses = {
   200: PaginatedServiceList;
 };
 
-export type ServicesListResponse = ServicesListResponses[keyof ServicesListResponses];
+export type ServicesListResponse =
+  ServicesListResponses[keyof ServicesListResponses];
 
 export type ServicesRetrieveData = {
   body?: never;
@@ -6995,7 +7047,8 @@ export type ServicesRetrieveResponses = {
   200: Service;
 };
 
-export type ServicesRetrieveResponse = ServicesRetrieveResponses[keyof ServicesRetrieveResponses];
+export type ServicesRetrieveResponse =
+  ServicesRetrieveResponses[keyof ServicesRetrieveResponses];
 
 export type EnumsListData = {
   body?: never;
@@ -7097,4 +7150,5 @@ export type SearchRetrieveResponses = {
   200: SearchResult;
 };
 
-export type SearchRetrieveResponse = SearchRetrieveResponses[keyof SearchRetrieveResponses];
+export type SearchRetrieveResponse =
+  SearchRetrieveResponses[keyof SearchRetrieveResponses];
