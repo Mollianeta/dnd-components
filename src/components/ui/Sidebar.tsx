@@ -7,37 +7,54 @@ import {
   DropdownItem,
   DropdownMenu,
 } from "react-bootstrap";
-import { creaturesList } from "../../modules/open5e/sdk.gen";
+import {
+  armorList,
+  creaturesList,
+  itemsList,
+  spellsList,
+} from "../../modules/open5e/sdk.gen";
 import { PaginatedCreatureList } from "../../modules/open5e/types.gen";
 import { Link } from "react-router";
 
-const sidebarItems: Array<string> = [
-  "Item1, Item2, Item3, Item4, Item5, Item6, Item7, Item8",
-];
-const sidebarCharacters: Array<string> = [
-  "Character, Character, Character, Character, Character, Character, Character, Character",
-];
-const sidebarMonsters: Array<string> = [
-  "Monster, Monster, Monster, Monster, Monster, Monster, Monster, Monster",
-];
+const listFunctions = {
+  monsters: creaturesList,
+  spells: spellsList,
+  items: itemsList,
+  armor: armorList,
+};
+
+type Category = keyof typeof listFunctions;
+
+interface ListableItem {
+  key: string;
+  name: string;
+}
+
+type AnyPaginatedList = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: ListableItem[];
+};
 
 export default function Sidebar() {
-  const [creatureList, setCreatureList] =
-    useState<PaginatedCreatureList | null>(null);
+  const [category, setCategory] = useState("monsters");
+  const [data, setData] = useState<AnyPaginatedList | null>(null);
+
+  const handleSelect = async (category: string) => {
+    const result = await listFunctions[category as Category]({
+      query: {
+        page: 1,
+      },
+    });
+    setData(result.data as AnyPaginatedList);
+  };
 
   useEffect(() => {
-    async function load() {
-      const res = await creaturesList({
-        query: {
-          page: 1,
-        },
-      });
-      setCreatureList(res.data as PaginatedCreatureList);
-    }
-    load();
-  }, []);
+    handleSelect(category);
+  }, [category]);
 
-  if (!creatureList) {
+  if (!data) {
     return (
       <div>
         <p>...loading</p>
@@ -77,21 +94,30 @@ export default function Sidebar() {
               id="lib-char"
               className="lib-state"
             />
-            <DropdownButton id="sidebar-dropdown-selection" title="Category">
+            <DropdownButton
+              id="sidebar-dropdown-selection"
+              title={category.charAt(0).toUpperCase() + category.slice(1)}
+              onSelect={(key) => {
+                if (key) {
+                  setCategory(key as Category);
+                  handleSelect(key as Category);
+                }
+              }}
+            >
               <DropdownMenu>
-                <DropdownItem>armor</DropdownItem>
+                <DropdownItem eventKey="armor">Armor</DropdownItem>
                 <DropdownItem>Backgrounds</DropdownItem>
                 <DropdownItem>Classes</DropdownItem>
                 <DropdownItem>Conditions</DropdownItem>
                 <DropdownItem>Documents</DropdownItem>
                 <DropdownItem>Feats</DropdownItem>
                 <DropdownItem>Magic Items</DropdownItem>
-                <DropdownItem>Monsters</DropdownItem>
+                <DropdownItem eventKey="monsters">Monsters</DropdownItem>
                 <DropdownItem>Planes</DropdownItem>
                 <DropdownItem>Races</DropdownItem>
                 <DropdownItem>Sections</DropdownItem>
                 <DropdownItem>Spell Lists</DropdownItem>
-                <DropdownItem>Spells</DropdownItem>
+                <DropdownItem eventKey="spells">Spells</DropdownItem>
                 <DropdownItem>Weapons</DropdownItem>
               </DropdownMenu>
             </DropdownButton>
@@ -106,7 +132,7 @@ export default function Sidebar() {
             <div className="library-content">
               <div className="content-pane pane-monsters">
                 <ul className="list">
-                  {creatureList?.results.map((creature) => (
+                  {data?.results.map((creature) => (
                     <li>
                       <Link to={"/encounter/monster/" + creature.key}>
                         <Button variant="outline-info" size="sm">
