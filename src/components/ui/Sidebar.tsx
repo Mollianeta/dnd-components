@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import {
   Button,
   Col,
-  Dropdown,
   DropdownButton,
   DropdownItem,
   DropdownMenu,
@@ -12,8 +11,8 @@ import {
   creaturesList,
   itemsList,
   spellsList,
+  weaponsList,
 } from "../../modules/open5e/sdk.gen";
-import { PaginatedCreatureList } from "../../modules/open5e/types.gen";
 import { Link } from "react-router";
 
 const listFunctions = {
@@ -21,6 +20,7 @@ const listFunctions = {
   spells: spellsList,
   items: itemsList,
   armor: armorList,
+  weapons: weaponsList,
 };
 
 type Category = keyof typeof listFunctions;
@@ -118,7 +118,7 @@ export default function Sidebar() {
                 <DropdownItem>Sections</DropdownItem>
                 <DropdownItem>Spell Lists</DropdownItem>
                 <DropdownItem eventKey="spells">Spells</DropdownItem>
-                <DropdownItem>Weapons</DropdownItem>
+                <DropdownItem eventKey="weapons">Weapons</DropdownItem>
               </DropdownMenu>
             </DropdownButton>
 
@@ -134,7 +134,7 @@ export default function Sidebar() {
                 <ul className="list">
                   {data?.results.map((creature) => (
                     <li>
-                      <Link to={"/encounter/monster/" + creature.key}>
+                      <Link to={`/encounter/${category}/` + creature.key}>
                         <Button variant="outline-info" size="sm">
                           {creature.name}
                         </Button>
